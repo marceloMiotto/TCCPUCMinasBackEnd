@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- database connection settings -->
+        <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/tcces</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">p0stgr3s</property>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+
+        <!-- JDBC connection pool -->
+        <property name="connection_pool_size">1</property>
+
+        <!--SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <property name="show_sql">true</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+
+        <mapping class="org.pucminas.estcc.miotto.model.Cliente"/>
+
+    </session-factory>
+</hibernate-configuration>
